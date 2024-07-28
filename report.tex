@@ -53,18 +53,20 @@ This class has two methods, \emph{SVD\_Compact} and \emph{SVD\_Truncate}, which 
 NumPy generates $U$, $\Sigma$, and $V$ matrices that are sorted from greatest to least with respect to $\Sigma$'s singular values.
 This makes the Compact SVD and Truncate SVD algorithms incredibly simple, since all there is to do is truncate the last rows/columns of the matrices.
 For Compact SVD, keep the first $r$ vectors.
-For Truncate SVD, keep the first $n$ vectors, where $n$ is specified in command line arguements. 
+For Truncate SVD, keep the first $n$ vectors, where $n$ is specified in the second command line arguement. 
+
+The code for this project can be found here: \url{https://github.com/MrDoggus/SVD-Compression}
 
 \section*{Results}
 
-Since I did give myself time to create a image file format for the SVD compression, there isn't a way to directly compare the actual compression ratios resulting from this algorithm.
+Since I didn't give myself time to create a image file format for the SVD compression, there isn't a way to directly compare the actual compression ratios resulting from this algorithm.
 Tim Baumann has a general formula on his website to calculate the compression ratio \cite{tsvd}. 
 If $w$ is the image width, $h$ is the image height, and $n$ is truncated size of the singular values, the compression ratio is given below: \\
 
 $ \frac{w \times h}{w \times n + n + n \times h} $ \\
 
 I performed the SVD compression algorithm on a picture of my parent's dog. 
-The results of this for various values of n can be seen below the references section.
+The results of the compression for varying values of n can be seen below the references section.
 
 \begin{figure}[h]
     \includegraphics[scale=0.15]{lokip.jpg_svdc.png}
